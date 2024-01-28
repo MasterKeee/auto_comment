@@ -691,18 +691,18 @@ if __name__ == '__main__':
     #logger.debug('Closed the configuration file')
     #logger.debug('Configurations in Python-dict format: %s', cfg)
     cks = []
-    if "PC_COOKIE" in os.environ:
-        if len(os.environ["PC_COOKIE"]) > 200:
-            if '&' in os.environ["PC_COOKIE"]:
-                cks = os.environ["PC_COOKIE"].split('&')
+    if "JD_COOKIE" in os.environ:
+        if len(os.environ["JD_COOKIE"]) > 200:
+            if '&' in os.environ["JD_COOKIE"]:
+                cks = os.environ["JD_COOKIE"].split('&')
             else:
-                cks.append(os.environ["PC_COOKIE"])
+                cks.append(os.environ["JD_COOKIE"])
         else:
             logger.info ("CK错误，请确认是否电脑版CK！")
             sys.exit(1)
         logger.info ("已获取环境变量 CK")       
     else:
-        logger.info("没有设置变量PC_COOKIE，请添加电脑端CK到环境变量")
+        logger.info("没有设置变量JD_COOKIE，请添加电脑端CK到环境变量")
         sys.exit(1)
     if "OPENAI_API_KEY" in os.environ:
         logger.info('已启用AI评价')
